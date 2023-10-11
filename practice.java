@@ -1,26 +1,33 @@
 class details{
-    public void maxarray(){
+    public void search(){
         int[] num = {1,5,25,3,10};
-
-        int ans=0;
+        int x=3;
+        int ans=-1;
         for (int i=0;i<num.length;i++){
-            if(num[i]>ans){
-                ans=num[i];
+            if(x==num[i]){
+                ans=i;
+                break;
+                
             }
-            }
-            System.out.println("Max" + ans);
-            
-            
         }
-        
-        
-     
+        if(ans==-1){
+            System.out.println("not found");
+        }else{
+        System.out.println("found"+" "+x+" "+"at"+" "+ans);
+        }
+            
+    }
 }
+           
+     
+
+
+
 
 public class practice {
     public static void main(String[] args){
         details obj1 = new details();
-        obj1.maxarray();
+        obj1.search();
     }
     
 }
