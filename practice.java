@@ -1,13 +1,14 @@
 class details{
-    public void ages(){
-        int[] ages = {1,5,3,};
+    public void maxarray(){
+        int[] num = {1,5,25,3,10};
 
-        int sum=0;
-        for (int i=0;i<ages.length;i++){
-            
-                sum=sum+ages[i];
+        int ans=0;
+        for (int i=0;i<num.length;i++){
+            if(num[i]>ans){
+                ans=num[i];
             }
-            System.out.println(sum);
+            }
+            System.out.println("Max" + ans);
             
             
         }
@@ -19,7 +20,7 @@ class details{
 public class practice {
     public static void main(String[] args){
         details obj1 = new details();
-        obj1.ages();
+        obj1.maxarray();
     }
     
 }
