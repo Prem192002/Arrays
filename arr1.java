@@ -1,23 +1,23 @@
 import java.util.*;
-public class arr1 {
-    public static void main(String[] args){
+class details{
+    static void fun(int num){
         Scanner sc = new Scanner(System.in);
-
-        System.out.println("Enter the sizxe of the array");
-        int x = sc.nextInt();
-
-        System.out.println("wnter the array element:");
-
-        int [] marks = new int[x];
-        for(int i=0;i<x;i++){
-        marks[i]=sc.nextInt();  //i=0-x;
+        int[] ages = new int[num];
+        System.out.println("enter the array value:");
+        for (int i=0;i<ages.length;i++){
+        ages[i]=sc.nextInt();
         }
-        
-        for(int i=0;i<x;i++){
-            System.out.print(+marks[i]);
+    for(int i=0;i<num;i++){
+        System.out.print(ages[i]);
         }
-    
-
-    
+    }
+}
+public class arr1{
+    public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter the size of the array: ");
+    int num = sc.nextInt();
+        details obj = new details();
+        obj.fun(num);
     }
 }
