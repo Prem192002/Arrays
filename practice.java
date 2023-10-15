@@ -1,6 +1,6 @@
 class details{
     public void search(){
-        int[] num = {1,5,25,3,10};
+        int[] num = {1,5,25,3,10,11};
         int x=3;
         int ans=-1;
         for (int i=0;i<num.length;i++){
