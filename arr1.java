@@ -31,7 +31,7 @@ class student{
             System.out.println("enter the name:");
             sc.nextLine();
             obj.setName(sc.nextLine());
-            System.out.println("the id is:"+obj.getID()+"the name is:"+obj.getName());
+            System.out.println("the id is:"+obj.getID()+" "+"the name is:"+obj.getName());
         }
     }
 
