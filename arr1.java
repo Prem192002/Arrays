@@ -1,38 +1,35 @@
 import java.util.*;
-class student{
-    private int id;
-    private String name;
+class arr1{
 
-
-    
-
-    public int getID(){
-        return id;
+    public static void printarray(int[] arr){
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+        System.out.println();
     }
-    public void setID(int id){
-        this.id=id;
-    }
+    public static void main(String[] args){
+        int[] array1 = new int[5];
+        array1[0]=2;
+        array1[1]=4;
+        array1[2]=6;
+        array1[3]=8;
+        array1[4]=10;
 
-    public String getName(){
-        return name;
-    }
-    public void setName(String name){
-        this.name=name;
+        // System.out.println("original array:");
+        // printarray(array1);
+
+        int[] array2=Arrays.copyOfRange(array1,0,3);
+
+        // System.out.println("Copied array:");
+        // printarray(array2);
+        array2[0]=0;
+        array2[1]=0;
+
+        System.out.println("original array:");
+        printarray(array1);
+        
+        System.out.println("Copied array:");
+        printarray(array2);
+
     }
 }
-
-
-    public class arr1{
-        public static void main(String[] args){
-            Scanner sc= new Scanner(System.in);
-            student obj = new student();
-            System.out.println("enter the id:");
-            obj.setID(sc.nextInt());
-            System.out.println("enter the name:");
-            sc.nextLine();
-            obj.setName(sc.nextLine());
-            System.out.println("the id is:"+obj.getID()+" "+"the name is:"+obj.getName());
-        }
-    }
-
-
