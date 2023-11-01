@@ -1,19 +1,33 @@
+    import java.util.*;
 public class arr2 {
-    public static void changearray(int[] arr){
-        for(int i=0;i<arr.length;i++){
-            arr[i]=0;
-            System.out.print(arr[i]+" ");
-        }
 
-    }
+
+
     public static void main(String[] args){
-        int[] array=new int[3];
-        array[0]=5;
-        array[1]=6;
-        array[2]=7;
 
-        changearray(array);
+        int[] array=new int[7];
+        array[0]=1;
+        array[1]=2;
+        array[2]=3;
+        array[3]=4;
+        array[4]=7;
+        array[5]=2;
+        array[6]=1;
+
+        int notunique=0; 
         
-    }
+        for(int i=0;i<array.length;i++){
+            for(int j=i+1;j<array.length;j++){
+                if(array[i]==array[j]){
+                    notunique++;
+                }
+                // else if(array[i]!=array[j]){
+                //     unique++;
+                // }
+            }
+        }
+        int unique=array.length-(2*notunique);
+        System.out.println(unique);
     
+}
 }
