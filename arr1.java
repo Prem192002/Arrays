@@ -13,21 +13,22 @@ class arr1{
         array1[1]=4;
         array1[2]=6;
         array1[3]=8;
-        array1[4]=10;
-
-        // System.out.println("original array:");
-        // printarray(array1);
-
-        //int[] array2=Arrays.copyOfRange(array1,0,3);
-
-        // System.out.println("Copied array:");
-        // printarray(array2);
+        array1[4]=3;
 
 
         System.out.println("original array:");
         printarray(array1);
-
-        for(int i=array1.length-1;i>=0;i--){
+        int j=array1.length-1;
+        for(int i=0;i<j;i++){
+         
+                int temp=array1[i];
+                array1[i]=array1[j];
+                array1[j]=temp;
+                j=j-1;
+            
+        }
+        
+        for(int i=0;i<array1.length;i++){
             System.out.print(array1[i]+" ");
         }
 
