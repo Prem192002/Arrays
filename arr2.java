@@ -1,33 +1,31 @@
-    import java.util.*;
+import java.util.*;
+
 public class arr2 {
 
-
-
-    public static void main(String[] args){
-
-        int[] array=new int[7];
-        array[0]=1;
-        array[1]=2;
-        array[2]=3;
-        array[3]=4;
-        array[4]=7;
-        array[5]=2;
-        array[6]=1;
-
-        int notunique=0; 
-        
-        for(int i=0;i<array.length;i++){
-            for(int j=i+1;j<array.length;j++){
-                if(array[i]==array[j]){
-                    notunique++;
-                }
-                // else if(array[i]!=array[j]){
-                //     unique++;
-                // }
-            }
+    public static int count(int x) {
+        int count = 0;
+        while (x > 0) {
+            x = x / 10;
+            count = count + 1;
         }
-        int unique=array.length-(2*notunique);
-        System.out.println(unique);
-    
-}
+        return count;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number");
+        int num = sc.nextInt();
+
+        int[] array = new int[count(num)];
+        int countdigit=count(num);
+        for (int j = 0; j < countdigit; j++) {
+            array[j] = num % 10;
+            num = num / 10;
+        }
+
+        System.out.print("Reversed digits: ");
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i]);
+        }
+    }
 }

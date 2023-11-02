@@ -18,18 +18,18 @@ class arr1{
         // System.out.println("original array:");
         // printarray(array1);
 
-        int[] array2=Arrays.copyOfRange(array1,0,3);
+        //int[] array2=Arrays.copyOfRange(array1,0,3);
 
         // System.out.println("Copied array:");
         // printarray(array2);
-        array2[0]=0;
-        array2[1]=0;
+
 
         System.out.println("original array:");
         printarray(array1);
-        
-        System.out.println("Copied array:");
-        printarray(array2);
+
+        for(int i=array1.length-1;i>=0;i--){
+            System.out.print(array1[i]+" ");
+        }
 
     }
 }
