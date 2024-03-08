@@ -1,33 +1,17 @@
-class details{
-    public void search(){
-        int[] num = {1,5,25,3,11};
-        int x=10;
-        int ans=-1;
-        for (int i=0;i<num.length;i++){
-            if(x==num[i]){
-                ans=i;
-                break;
-                
-            }
-        }
-        if(ans==-1){
-            System.out.println("not found");
-        }else{
-        System.out.println("found"+" "+x+" "+"at"+" "+ans);
-        }
-            
-    }
-}
-           
-     
+import java.util.*;
 
-
-
-
-public class practice {
+class practice{
     public static void main(String[] args){
-        details obj1 = new details();
-        obj1.search();
+        int result = 0;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter the N value");
+        int[] num = new int[5];
+        for(int i=0;i<num.length;i++){
+            num[i]=sc.nextInt();
+        }
+        for(int i=0;i<num.length;i++){
+            result=result+num[i];
+        }
+        System.out.println(result);
     }
-    
 }
