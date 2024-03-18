@@ -7,8 +7,8 @@ public class frequency_array{
         array[2]=5;
         array[3]=400;
         array[4]=720;
-        array[5]=1000;
-        array[6]=400;
+        array[5]=100;
+        array[6]=450;
 
         int[] frequency = new int[100000];
         for(int i=0;i<frequency.length;i++ ){
