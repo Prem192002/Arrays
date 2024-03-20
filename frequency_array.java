@@ -2,7 +2,7 @@ import java.util.*;
 public class frequency_array{
     public static void main(String[] args){
         int[] array = new int[7];
-        array[0]=5;
+        array[0]=4;
         array[1]=6;
         array[2]=5;
         array[3]=400;
