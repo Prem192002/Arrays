@@ -26,7 +26,7 @@ class test {
         
     }
     public static void main(String[] args){
-    int [] arr = {10,10,10};
+    int [] arr = {10,10,10,1};
     int fin= print2largest(arr,3);
     System.out.println(fin);
     }
