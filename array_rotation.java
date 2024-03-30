@@ -15,7 +15,7 @@ class array_rotation {
         array1[1] = 4;
         array1[2] = 6;
         array1[3] = 8;
-        array1[4] = 3;
+        array1[4] = 4;
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of positions to rotate:");
