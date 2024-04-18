@@ -7,13 +7,10 @@ class test{
     l1.add(15);
     l1.add(20);
     l1.add(25);
-    l1.add(1,100); 
 
-        // for(int i=0;i<l1.size();i++){
-        // System.out.println(l1.get(i));
-        // }
-
-        System.out.println(l1);
+        
+        boolean ans = l1.contains(20);
+        System.out.println(ans);
     }
     
 }
