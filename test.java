@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 class test{
     public static void main(String[] args){
     ArrayList<Integer> l1 = new ArrayList<>();
@@ -9,10 +10,10 @@ class test{
     l1.add(25);
     l1.add(50);
     l1.add(65);
-    // l1.removeIf(n-> n%2==0);
-    l1.remove(4);
     
-        System.out.println(l1);
+    l1.add(4,100);
+    Collections.sort(l1);
+    System.out.println(l1);
     }
     
 }
