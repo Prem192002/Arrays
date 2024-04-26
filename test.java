@@ -1,5 +1,5 @@
 import java.lang.reflect.Array;
-import java.util.ArrayList;
+import java.util.*;
 
 public class test {
     public static void main(String[] args) {
@@ -10,7 +10,7 @@ public class test {
         li.add(3);
         li.add(1);
 
-        reverseArray(li);
+        Collections.sort(li);
 
         // Print the reversed arraylist
         for(int i=0;i<li.size();i++){
@@ -18,18 +18,5 @@ public class test {
         }
         
     }
-
-    public static void reverseArray(ArrayList<Integer> li) {
-            int right = li.size()-1;
-            int left = 0;
-
-            while(right>left){
-                int temp=li.get(left);
-                li.set(left,li.get(right));
-                li.set(right,temp);
-                left++;
-                right--;               
-            }
-        }
     }
 
