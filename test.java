@@ -1,19 +1,35 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collections;
-class test{
-    public static void main(String[] args){
-    ArrayList<Integer> l1 = new ArrayList<>();
-    l1.add(5);
-    l1.add(10);
-    l1.add(15);
-    l1.add(20);
-    l1.add(25);
-    l1.add(50);
-    l1.add(65);
-    
-    l1.add(4,100);
-    Collections.sort(l1);
-    System.out.println(l1);
+
+public class test {
+    public static void main(String[] args) {
+        ArrayList<Integer> li = new ArrayList<>();
+        li.add(5);
+        li.add(9);
+        li.add(7);
+        li.add(3);
+        li.add(1);
+
+        reverseArray(li);
+
+        // Print the reversed arraylist
+        for(int i=0;i<li.size();i++){
+            System.out.print(li.get(i)+" ");
+        }
+        
     }
-    
-}
+
+    public static void reverseArray(ArrayList<Integer> li) {
+            int right = li.size()-1;
+            int left = 0;
+
+            while(right>left){
+                int temp=li.get(left);
+                li.set(left,li.get(right));
+                li.set(right,temp);
+                left++;
+                right--;               
+            }
+        }
+    }
+
