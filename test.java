@@ -10,7 +10,7 @@ public class test {
         li.add(3);
         li.add(1);
 
-        Collections.sort(li);
+        Collections.reverse(li);
 
         // Print the reversed arraylist
         for(int i=0;i<li.size();i++){
