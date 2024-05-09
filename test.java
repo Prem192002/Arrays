@@ -9,7 +9,7 @@ public class test {
         li.add(7);
         li.add(3);
         li.add(1);
-
+        li.add(1);
         Collections.reverse(li);
 
         // Print the reversed arraylist
