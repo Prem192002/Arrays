@@ -1,9 +1,3 @@
-class fun{
-    int sum_frn(int a,int b){
-        int ans = a+b;
-        return ans;
-    }
-}
 
 class test{
     public static void main(String[] args) {
