@@ -17,7 +17,7 @@ class Solution {
 
 class practice {
     public static void main(String[] args) {
-        int array[] = { 1, 2, 3, 5, 10 };
+        int array[] = { 1, 2, 3, 5, 10,4};
         Solution sol = new Solution();
         int result = sol.missingNumber(array, 5);
         System.out.println(result);
