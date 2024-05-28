@@ -1,10 +1,14 @@
+class test {
+    static int series_number(int n) {
+        if(n==0){
+            return 1;
+        }
+        int num = series_number(n-1);
+        int ans = n*num;
+        return ans;
+    }
 
-class test{
     public static void main(String[] args) {
-       
-            fun obj = new fun();
-            int ans = obj.sum_frn(5,3);
-            System.out.println(ans);
-        
+        System.out.println(series_number(5));
     }
 }
