@@ -1,16 +1,16 @@
 class test {
-    static void k_multiples(int num, int k) {
-        if(k==1){
-            System.out.println(num);
-            return;
+    static int n_sum(int num) {
+        if(num==1){
+            
+            return num;
         }
-        k_multiples(num, k-1);
-
-        System.out.println(num*k);
+        int rest_sum=n_sum(num-1);
+        int res = rest_sum+num;
+        return res;
     }
 
     public static void main(String[] args) {
-        k_multiples(3, 5);
+        System.out.println(n_sum(5));
         
     }
 }
