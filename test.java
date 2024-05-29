@@ -1,14 +1,16 @@
 class test {
-    static int series_number(int n) {
-        if(n==0){
-            return 1;
+    static int fibonacci(int n) {
+        if(n==0 || n==1){
+            return n;
         }
-        int num = series_number(n-1);
-        int ans = n*num;
+        int first_prev = fibonacci(n-1);
+        int second_prev = fibonacci(n-2);
+
+        int ans = first_prev+second_prev;
         return ans;
     }
 
     public static void main(String[] args) {
-        System.out.println(series_number(5));
+        System.out.println(fibonacci(7));
     }
 }
