@@ -1,17 +1,16 @@
 class test {
-    static int power(int p, int q) {
-        if(q==0){
-            return 1;
+    static void k_multiples(int num, int k) {
+        if(k==1){
+            System.out.println(num);
+            return;
         }
-        int last_count = p;
-        int reset_count= power(p,q-1);
+        k_multiples(num, k-1);
 
-        int ans = reset_count*last_count;
-        return ans;
+        System.out.println(num*k);
     }
 
     public static void main(String[] args) {
-            System.out.println(power(6,3));
+        k_multiples(3, 5);
         
     }
 }
