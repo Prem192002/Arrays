@@ -1,16 +1,17 @@
 class test {
-    static int fibonacci(int n) {
-        if(n==0 || n==1){
+    static int digit_sum(int n) {
+        if(n>=0 && n<=9){
             return n;
         }
-        int first_prev = fibonacci(n-1);
-        int second_prev = fibonacci(n-2);
+        int last_digit = n%10;
+        int reset_sum = digit_sum(n/10);
 
-        int ans = first_prev+second_prev;
+        int ans = reset_sum+last_digit;
         return ans;
     }
 
     public static void main(String[] args) {
-        System.out.println(fibonacci(7));
+            System.out.println(digit_sum(1234));
+        
     }
 }
