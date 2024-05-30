@@ -1,13 +1,14 @@
 class test {
-    static int hcd(int p, int q) {
-        if(q==0){
-            return p;
+    static void printarray(int[]num, int idx) {
+        if(idx==num.length){
+            return;
         }
-        return hcd(q,p%q);
+        System.out.println(num[idx]);
+        printarray(num, idx+1);
     }
 
     public static void main(String[] args) {
-        System.out.println(hcd(24,15));
-        
+        int[] num = {5,8,2,7};
+        printarray(num, 0);
     }
 }
