@@ -1,15 +1,21 @@
 class test {
-    static int arraysum(int[]num, int idx) {
-        if(idx==num.length-1){
-            return num[idx];
+    static boolean findx(int[]num,int x, int idx) {
+        
+        if(idx==num.length){
+            return false;
         }
-        int smallsum = arraysum(num, idx+1);
-        int res = num[idx]+smallsum;
-        return res;
+        
+        if(num[idx]==x){
+            return true;
+        }
+
+        return findx(num, x, idx+1);
+        
+        
     }
 
     public static void main(String[] args) {
         int[] num = {5,8,2,7,12};
-        System.out.println(arraysum(num, 0));
+        System.out.println(findx(num,12,0));
     }
 }
