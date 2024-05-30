@@ -1,19 +1,9 @@
 class test {
     static int hcd(int p, int q) {
-        int smallest = 0;
-        if(p>q){
-            smallest=q;
+        if(q==0){
+            return p;
         }
-        else {
-            smallest=p;
-        }
-        int res = 1;
-        for(int i=1;i<=smallest;i++){
-            if(p%i==0 && q%i==0){
-                res=i;
-            }
-        }
-        return res;
+        return hcd(q,p%q);
     }
 
     public static void main(String[] args) {
