@@ -1,21 +1,30 @@
+import java.util.ArrayList;
+
 class test {
-    static boolean findx(int[]num,int x, int idx) {
-        
-        if(idx==num.length){
-            return false;
-        }
-        
-        if(num[idx]==x){
-            return true;
+    static ArrayList<Integer> indices(int[]num,int N, int target, int idx){
+        ArrayList<Integer> res = new ArrayList<>();
+        //base case
+        if(idx==N){
+            return res;
         }
 
-        return findx(num, x, idx+1);
+
+        //self work
+
+        if(num[idx]==target){
+            res.add(idx);
+        }
+
+        //small work
         
-        
+        res.addAll(indices(num, N, target, idx+1));
+        return res;
     }
 
     public static void main(String[] args) {
-        int[] num = {5,8,2,7,12};
-        System.out.println(findx(num,12,0));
+        int[] num = {5,8,2,7,12,2,1,2};
+        for (int i = 0; i <indices(num, 8, 2, 0).size(); i++) {
+            System.out.println(indices(num, 8, 2, 0).get(i));
+        }
     }
 }
