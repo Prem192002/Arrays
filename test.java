@@ -3,20 +3,12 @@ import java.util.ArrayList;
 class test {
     static ArrayList<Integer> indices(int[]num,int N, int target, int idx){
         ArrayList<Integer> res = new ArrayList<>();
-        //base case
         if(idx==N){
             return res;
         }
-
-
-        //self work
-
         if(num[idx]==target){
             res.add(idx);
         }
-
-        //small work
-        
         res.addAll(indices(num, N, target, idx+1));
         return res;
     }
