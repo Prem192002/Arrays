@@ -1,45 +1,38 @@
-import java.util.*;
+class practice{
 
-class practice {
-    // Function to find the leaders in the array.
-    static ArrayList<Integer> leaders(int arr[], int n) {
-        return leader(arr, n, 0);
-    }
-    
-    private static ArrayList<Integer> leader(int arr[], int n, int idx) {
-        ArrayList<Integer> result = new ArrayList<>();
-        
-        // Base case
-        if (idx == n - 1) {
-            result.add(arr[n - 1]);
-            return result;
-        }
-        
-        //recursion work
-        ArrayList<Integer> restLeaders = new ArrayList<>();
-        restLeaders.addAll(leader(arr, n, idx + 1));
-        
-        // self work
-        if (arr[idx] >= restLeaders.get(0)) {
-            result.add(arr[idx]);
-        }
-        
-        // Add the rest of the leaders to the result
-        result.addAll(restLeaders);
-        
-        return result;
-    }
-    public static void main(String[] args) {
-        int arr[] = {16, 17, 4, 3, 5, 2};
-        int n = arr.length;
+    public static int equilibriumPoint(long arr[], int n) {
+        long[] sum1 = prefixSum(arr);
+        long[] sum2 = suffixSum(arr);
+        int ans = -1;
+        for(int i=0;i<arr.length;i++){
+            if(sum1[i]==sum2[i]){
+                ans = i+1;
+            }
 
-        ArrayList<Integer> leaders = practice.leaders(arr, n);
-        for (int leader : leaders) {
-            System.out.println(leader);
         }
+        return ans;
+        
+    }
+
+    private static long[] prefixSum(long[] arr){
+        long[] num1 = new long[arr.length];
+        num1[0]=arr[0];
+        for(int i=1;i<arr.length;i++){
+            num1[i]=num1[i-1]+arr[i];
+        }
+        return num1;
+    }
+
+    private static long[] suffixSum(long[] arr){
+        long[] num2 = new long[arr.length];
+        num2[num2.length-1]=arr[arr.length-1];
+        for(int i=arr.length-2;i>=0;i--){
+            num2[i]=num2[i+1]+arr[i];
+        }
+        return num2;
+    }
+    public static void main(String args[]){
+        long[] result = {1,3,5,2,2};
+        System.out.println(equilibriumPoint(result, 5));
     }
 }
-
-    
-
-    
