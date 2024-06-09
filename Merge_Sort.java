@@ -1,5 +1,4 @@
-import java.util.*;
-class test{
+public class Merge_Sort {
     public static void merge(int [] arr,int l, int mid, int h){
         int l1 = mid-l+1;
         int l2= h-mid;
