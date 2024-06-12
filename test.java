@@ -1,25 +1,34 @@
 import java.util.*;
 class test{
 
-    public static boolean isLucky(int n)
+     static boolean binarysearch(int[] n,int st,int end, int target)
     {
-        int counter=2;
-        // Your code here
-        if (counter > n) {
-            return true;
-        }
-        // If n is divisible by counter, n is not a lucky number
-        if (n % counter == 0) {
+       
+        int mid=(st+end)/2;
+        if(st>end){
             return false;
         }
-        // Calculate the new position of n after eliminating every counter-th number
-        n = n - (n / counter);
-        // Recursive call with the next counter
-        return isLucky(n);
-         
-    }
-    public static void main(String[] args) {
-        boolean ans = isLucky(19);
+
+        
+        
+        if(n[mid]==target){
+            return true;
+        }
+
+        else if(target<n[mid]){
+                
+               return binarysearch(n, st, mid-1, target);
+            }
+
+        else{
+                return binarysearch(n, mid+1, end, target);
+            }
+        }
+        
+        public static void main(String[] args) {
+        int[] arr = {2,4,8,3,9,1,6};
+        Arrays.sort(arr);
+         boolean ans = binarysearch(arr,0,6,9);
         System.out.println(ans);
     }
 }
