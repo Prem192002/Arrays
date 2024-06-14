@@ -1,34 +1,37 @@
 import java.util.*;
 class test{
 
-     static boolean binarysearch(int[] n,int st,int end, int target)
-    {
-       
-        int mid=(st+end)/2;
-        if(st>end){
-            return false;
-        }
-
-        
-        
-        if(n[mid]==target){
-            return true;
-        }
-
-        else if(target<n[mid]){
-                
-               return binarysearch(n, st, mid-1, target);
-            }
-
-        else{
-                return binarysearch(n, mid+1, end, target);
-            }
-        }
-        
-        public static void main(String[] args) {
-        int[] arr = {2,4,8,3,9,1,6};
+    static int findPair(int n, int x, int[] arr) {
+        // code here
         Arrays.sort(arr);
-         boolean ans = binarysearch(arr,0,6,9);
+        int ans= -1;
+        for(int i=0;i<arr.length;i++){
+            int st=i+1;
+            int end=arr.length-1;
+            
+            while(st<=end){
+                int target = x+arr[i];
+                int mid=(st+end)/2;
+                if(arr[mid]>target){
+                    end=mid-1;
+                }
+
+                else if(arr[mid]<target){
+                    st=mid+1;
+                }
+
+                else if(arr[mid]==target){
+                    ans= 1;
+                    return ans;
+                }
+            }
+        }
+
+        return ans;
+    }
+    public static void main(String[] args) {
+        int arr[] = {5, 20, 3, 2, 5, 80};
+        int ans= findPair(6,78,arr);
         System.out.println(ans);
     }
 }
