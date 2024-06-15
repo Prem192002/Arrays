@@ -1,37 +1,30 @@
-import java.util.*;
 class test{
+    //0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
 
-    static int findPair(int n, int x, int[] arr) {
-        // code here
-        Arrays.sort(arr);
-        int ans= -1;
-        for(int i=0;i<arr.length;i++){
-            int st=i+1;
-            int end=arr.length-1;
-            
-            while(st<=end){
-                int target = x+arr[i];
-                int mid=(st+end)/2;
-                if(arr[mid]>target){
-                    end=mid-1;
-                }
 
-                else if(arr[mid]<target){
-                    st=mid+1;
-                }
+    static int sRoot(int num){
+        int st = 0;
+        int end=num;
+        int ans = 0;
+        while(st<=end){
+            int mid=(st+end)/2;
 
-                else if(arr[mid]==target){
-                    ans= 1;
-                    return ans;
-                }
+            if(mid*mid==num){
+                ans= mid;
+                return ans;
+            }
+            if(mid*mid>num){
+                end = mid-1;
+            }
+
+            if(mid*mid < num){
+                ans=mid;
+                st=mid+1;
             }
         }
-
         return ans;
     }
-    public static void main(String[] args) {
-        int arr[] = {5, 20, 3, 2, 5, 80};
-        int ans= findPair(6,78,arr);
-        System.out.println(ans);
+    public static void main(String args[]){
+        System.out.println(sRoot(36));
     }
 }
