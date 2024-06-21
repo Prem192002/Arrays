@@ -1,110 +1,54 @@
-
+import java.util.Arrays;
 
 class test
 {
     //Function to find the maximum number of activities that can
     //be performed by a single person.
-    public static int activitySelection(int start[], int end[], int n)
-    {
-        // add your code here
-        int st = 0;
-        int nd=1;
-        int value = 1;
-        //sort the arrays based on end dates;
-        
-        mergeSort(start,end,0,n-1);
-        
-        while(nd<n){
-            if(end[st]!=start[nd]){
-                value ++;
-                st=nd;
-                nd++;
+    public static int function(int k, int[] arr){
+        int st=0;
+        int end=arr.length-1;
+        int gap1=arr.length;
+        int gap2=arr.length;
+        int value1=0;
+        int value2=0;
+        int ans =0;
+        while(st<=end){
+            int mid = (st+end)/2;
+
+            if(arr[mid]<k){
+                int count1 = k-arr[mid];
+                gap1=count1;
+                value1=arr[mid];
+
+                st=mid+1;
             }
-            
-            if(end[st]<=start[nd]){
-                nd++;
+
+            if(arr[mid]>k){
+                int count2=arr[mid]-k;
+                gap2 = count2;
+                value2=arr[mid];
+                end=mid-1;
             }
         }
-        
-        return value+1;
-    }
-    
-     private static void mergeSort(int[] start, int[] end, int left, int right)
-    {
-        if (left < right)
-        {
-            int mid = (left + right) / 2;
-            mergeSort(start, end, left, mid);
-            mergeSort(start, end, mid + 1, right);
-            merge(start, end, left, mid, right);
+        if(gap1==gap2){
+            ans=value2;
         }
-    }
-
-    // Merge function for merge sort
-    private static void merge(int[] start, int[] end, int left, int mid, int right)
-    {
-        int n1 = mid - left + 1;
-        int n2 = right - mid;
-
-        int[] leftStart = new int[n1];
-        int[] leftEnd = new int[n1];
-        int[] rightStart = new int[n2];
-        int[] rightEnd = new int[n2];
-
-        for (int i = 0; i < n1; i++)
-        {
-            leftStart[i] = start[left + i];
-            leftEnd[i] = end[left + i];
+        else if(gap1<gap2){
+            ans=value1;
+        }
+        else if(gap1>gap2){
+            ans=value2;
         }
 
-        for (int j = 0; j < n2; j++)
-        {
-            rightStart[j] = start[mid + 1 + j];
-            rightEnd[j] = end[mid + 1 + j];
-        }
-
-        int i = 0, j = 0, k = left;
-
-        while (i < n1 && j < n2)
-        {
-            if (leftEnd[i] <= rightEnd[j])
-            {
-                start[k] = leftStart[i];
-                end[k] = leftEnd[i];
-                i++;
-            }
-            else
-            {
-                start[k] = rightStart[j];
-                end[k] = rightEnd[j];
-                j++;
-            }
-            k++;
-        }
-
-        while (i < n1)
-        {
-            start[k] = leftStart[i];
-            end[k] = leftEnd[i];
-            i++;
-            k++;
-        }
-
-        while (j < n2)
-        {
-            start[k] = rightStart[j];
-            end[k] = rightEnd[j];
-            j++;
-            k++;
-        }
+        return ans;
     }
 
     
     public static void main(String[] args) {
-        int[] start = {1, 3, 2, 5};
-        int[] end = {2, 4, 3, 6};
+        int[] arr = {1,5,6,6,8,10,10,10,13};
         
-        int ans = activitySelection(start,end,4);
+        
+        int ans = function(11,arr);
         System.out.println(ans);
     }
 }
