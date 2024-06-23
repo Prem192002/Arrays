@@ -2,8 +2,7 @@ import java.util.Arrays;
 
 class test
 {
-    //Function to find the maximum number of activities that can
-    //be performed by a single person.
+
     public static int function(int k, int[] arr){
         int st=0;
         int end=arr.length-1;
