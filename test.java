@@ -1,53 +1,39 @@
-import java.util.Arrays;
+import java.util.*;
 
-class test
-{
+class test {
+    public static ArrayList<Integer> countEleLessThanOrEqual(int arr1[], int arr2[]) {
+        ArrayList<Integer> result = new ArrayList<>();
 
-    public static int function(int k, int[] arr){
-        int st=0;
-        int end=arr.length-1;
-        int gap1=arr.length;
-        int gap2=arr.length;
-        int value1=0;
-        int value2=0;
-        int ans =0;
-        while(st<=end){
-            int mid = (st+end)/2;
+        Arrays.sort(arr2); // Sort arr2 for binary search
 
-            if(arr[mid]<k){
-                int count1 = k-arr[mid];
-                gap1=count1;
-                value1=arr[mid];
+        for (int i = 0; i < arr1.length; i++) {
+            int target = arr1[i];
+            int left = 0;
+            int right = arr2.length - 1;
+            int count = 0;
 
-                st=mid+1;
+            while (left <= right) {
+                int mid = left + (right - left) / 2;
+
+                if (arr2[mid] <= target) {
+                    count = mid + 1;
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
             }
 
-            if(arr[mid]>k){
-                int count2=arr[mid]-k;
-                gap2 = count2;
-                value2=arr[mid];
-                end=mid-1;
-            }
-        }
-        if(gap1==gap2){
-            ans=value2;
-        }
-        else if(gap1<gap2){
-            ans=value1;
-        }
-        else if(gap1>gap2){
-            ans=value2;
+            result.add(count);
         }
 
-        return ans;
+        return result;
     }
 
-    
     public static void main(String[] args) {
-        int[] arr = {1,5,6,6,8,10,10,10,13};
-        
-        
-        int ans = function(11,arr);
-        System.out.println(ans);
+        int arr1[] = {4, 8, 7, 5, 1};
+        int arr2[] = {0, 1, 1, 3, 4, 5, 48};
+
+        ArrayList<Integer> counts = countEleLessThanOrEqual(arr1, arr2);
+        System.out.println("Counts: " + counts); // Output the counts
     }
 }
