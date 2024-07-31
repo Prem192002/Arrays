@@ -33,7 +33,7 @@ class test {
     
 
     public static void main(String[] args) {
-        int arr1[] = {1,3,5,67,123,125};
+        int arr1[] = {1,3,67,123,125};
         
         int res = lastIndex(arr1, 5);
         System.out.println(res);
