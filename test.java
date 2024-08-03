@@ -3,9 +3,6 @@ import java.util.*;
 class test {
     static int lastIndex(int arr[], int target)
     {
-        // {1,3,5,5,67,123,125}
-
-        //code to find the last index
 
         int st=0;
         int end=arr.length-1;
