@@ -1,9 +1,6 @@
-/**
- * Insertion_sort
- */
+
 public class Insertion_sort {
     static void sort(int[] arr){
-        // [ 3 , 8 , 6 , 2 , 4 , 5 ]
         int n = arr.length;
         
             for(int j=1;j<n;j++){
